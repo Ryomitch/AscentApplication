@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ascent_background"
+    tools:context=".RecordActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RecordABL">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/RecordToolbar"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/Theme.AscentApplication">
+
+            <ImageView
+                android:id="@+id/RecordLogo"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:onClick="HomeOnClick"
+                android:padding="1dp"
+                android:src="@drawable/ascent_logo_full_small" />
+
+            <TextView
+                android:id="@+id/RecordTitleTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/record_title_text"
+                android:layout_gravity="center"
+                android:textSize="28sp"
+                android:textColor="@color/white"/>
+
+            <RelativeLayout
+                android:id="@+id/RecordAvatarRL"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="1dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/profile_image_clickable"
+                android:onClick="ProfileOnClick"
+                android:layout_gravity="right">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/RecordAvatarCV"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="30dp">
+
+                    <ImageView
+                        android:id="@+id/RecordAvatarIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/profile_icon" />
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/RecordTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/RecordABL"
+        app:tabIndicatorColor="@color/ascent_blue"
+        app:tabSelectedTextColor="@color/ascent_blue"
+        app:tabTextColor="@color/white" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/RecordViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/RecordTabLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

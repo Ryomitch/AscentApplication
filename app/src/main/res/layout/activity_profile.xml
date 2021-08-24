@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ProfileScreenCL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ascent_background"
+    tools:context=".ProfileActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProfileABL">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ProfileToolbar"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/Theme.AscentApplication">
+
+            <ImageView
+                android:id="@+id/ProfileLogo"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:onClick="HomeOnClick"
+                android:padding="2dp"
+                android:src="@drawable/ascent_logo_full_small" />
+
+            <TextView
+                android:id="@+id/ProfileTitleTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_title_text"
+                android:textSize="28sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"/>
+
+            <RelativeLayout
+                android:id="@+id/ProfileToolbarAvatarRL"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/profile_image_clickable"
+                android:onClick="ProfileOnClick"
+                android:padding="1dp"
+                android:visibility="invisible">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ProfileToolbarAvatarCV"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="30dp">
+
+                    <ImageView
+                        android:id="@+id/ProfileToolbarAvatarIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/profile_icon" />
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ProfileDetailsCL"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_m"
+        android:background="@color/ascent_blue_card"
+        app:layout_constraintRight_toLeftOf="@id/ProfileVerticalGuidelineFarRight"
+        app:layout_constraintLeft_toLeftOf="@id/ProfileVerticalGuidelineFarLeft"
+        app:layout_constraintTop_toBottomOf="@id/ProfileABL"
+        app:layout_constraintBottom_toTopOf="@id/ProfileHorizontalGuidelineTwo">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/ProfileDetailsMidGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <RelativeLayout
+            android:id="@+id/ProfileAvatarRL"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:background="@drawable/profile_image_background"
+            android:layout_marginLeft="@dimen/margin_l"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ProfileAvatarCV"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cardCornerRadius="50dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:id="@+id/ProfilePicIV"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/profile_icon"
+                    android:scaleType="centerCrop"/>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/ProfileDisplayNameTV"
+            android:layout_width="185dp"
+            android:layout_height="45dp"
+            android:text="@string/display_name_placeholder_text"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/ProfileAvatarRL"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ProfileDetailsMidGuideline"/>
+
+        <TextView
+            android:id="@+id/ProfileEmailTV"
+            android:layout_width="185dp"
+            android:layout_height="45dp"
+            android:text="@string/email_placeholder_text"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/ProfileAvatarRL"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProfileDetailsMidGuideline"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:id="@+id/ProfileAddBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="FriendRequestOnClick"
+            android:text="@string/send_friend_request_button_text"
+            android:textSize="10sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/ProfileAvatarRL"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ProfileDisplayNameTV" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ProfileViewProblemsCL"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_2xl"
+        android:layout_marginBottom="@dimen/margin_2xl"
+        android:background="@color/ascent_blue_card"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@id/ProfileVerticalGuidelineFarLeft"
+        app:layout_constraintRight_toLeftOf="@id/ProfileVerticalGuidelineFarRight"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileDetailsCL"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ProfileViewProblemsTV"
+            android:text="@string/view_user_profile_problems_text"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ProfileViewProblemsRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/ProfileViewProblemsTV"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ProfileFriendsBtnCL"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_2xl"
+        android:background="@drawable/card_btn_bg"
+        android:onClick="FriendsOnClick"
+        app:layout_constraintLeft_toRightOf="@id/ProfileVerticalGuidelineFarLeft"
+        app:layout_constraintRight_toLeftOf="@id/ProfileVerticalGuidelineFarRight"
+        app:layout_constraintTop_toBottomOf="@id/ProfileHorizontalGuidelineTwo"
+        app:layout_constraintBottom_toTopOf="@id/ProfileHorizontalGuidelineThree">
+
+        <RelativeLayout
+            android:id="@+id/ProfileFriendsRL"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:cardCornerRadius="35dp"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/ProfileFriendsIV"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/friends_icon" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/ProfileFriendsTV"
+            android:layout_width="141dp"
+            android:layout_height="31dp"
+            android:layout_marginLeft="120dp"
+            android:text="@string/friends_btn_text"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ProfileProblemsBtnCL"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_2xl"
+        android:background="@drawable/card_btn_bg"
+        android:onClick="MyProblemsOnClick"
+        app:layout_constraintLeft_toRightOf="@id/ProfileVerticalGuidelineFarLeft"
+        app:layout_constraintRight_toLeftOf="@id/ProfileVerticalGuidelineFarRight"
+        app:layout_constraintTop_toBottomOf="@id/ProfileHorizontalGuidelineThree"
+        app:layout_constraintBottom_toTopOf="@id/ProfileHorizontalGuidelineFour">
+
+        <RelativeLayout
+            android:id="@+id/ProfileProblemRL"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:cardCornerRadius="35dp"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/ProfileProblemsIV"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/problems_icon" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/ProfileProblemsTV"
+            android:layout_width="152dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="120dp"
+            android:text="@string/profile_problem_btn_text"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ProfileFavBtnCL"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_2xl"
+        android:background="@drawable/card_btn_bg"
+        android:onClick="FavoritesOnClick"
+        app:layout_constraintLeft_toRightOf="@id/ProfileVerticalGuidelineFarLeft"
+        app:layout_constraintRight_toLeftOf="@id/ProfileVerticalGuidelineFarRight"
+        app:layout_constraintTop_toBottomOf="@id/ProfileHorizontalGuidelineFour"
+        app:layout_constraintBottom_toTopOf="@id/ProfileHorizontalGuidelineFive">
+
+        <RelativeLayout
+            android:id="@+id/ProfileFavRL"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/transparent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:cardCornerRadius="35dp"
+                android:layout_centerInParent="true"
+                android:background="@color/transparent">
+
+                <ImageView
+                    android:id="@+id/ProfileFavIV"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/fav_icon_full" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/ProfileFavTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:text="@string/profile_favorites_btn_text"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ProfileRecordBtnCL"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_2xl"
+        android:background="@drawable/card_btn_bg"
+        android:onClick="RecordOnClick"
+        app:layout_constraintLeft_toRightOf="@id/ProfileVerticalGuidelineFarLeft"
+        app:layout_constraintRight_toLeftOf="@id/ProfileVerticalGuidelineFarRight"
+        app:layout_constraintTop_toBottomOf="@id/ProfileHorizontalGuidelineFive"
+        app:layout_constraintBottom_toTopOf="@id/ProfileHorizontalGuidelineSix">
+
+        <RelativeLayout
+            android:id="@+id/ProfileRecordRL"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/transparent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:cardCornerRadius="35dp"
+                android:layout_centerInParent="true"
+                android:background="@color/transparent">
+
+                <ImageView
+                    android:id="@+id/ProfileRecordIV"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/stats_icon"
+                    android:background="@color/transparent"/>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/ProfileRecordTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:text="@string/profile_record_btn_text"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ProfileHorizontalGuidelineTwo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.35"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ProfileHorizontalGuidelineThree"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.5"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ProfileHorizontalGuidelineFour"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.65"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ProfileHorizontalGuidelineFive"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.8"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ProfileHorizontalGuidelineSix"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.95"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ProfileVerticalGuidelineFarRight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.95"
+        android:orientation="vertical"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ProfileVerticalGuidelineRight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.65"
+        android:orientation="vertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ProfileVerticalGuidelineFarLeft"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.05"
+        android:orientation="vertical"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ProfileVerticalGuidelineLeft"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.35"
+        android:orientation="vertical"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

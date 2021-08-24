@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ascent_background"
+    tools:context=".ProblemSearchActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProblemSearchABL">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ProblemSearchToolbar"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/Theme.AscentApplication">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:onClick="HomeOnClick"
+                android:padding="1dp"
+                android:src="@drawable/ascent_logo_full_small" />
+
+            <TextView
+                android:id="@+id/ProblemSearchTitleTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/problem_search_title_text"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+
+            <RelativeLayout
+                android:id="@+id/ProblemSearchAvatarRL"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="1dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/profile_image_clickable"
+                android:onClick="ProfileOnClick"
+                android:layout_gravity="right">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ProblemSearchAvatarCV"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="30dp">
+
+                    <ImageView
+                        android:id="@+id/ProblemSearchAvatarIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/profile_icon" />
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <SearchView
+        android:theme="@style/SearchAutoCompleteTextView"
+        android:id="@+id/ProblemSearchView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:queryHint="Search"
+        app:layout_constraintLeft_toRightOf="@id/ProblemSearchViewLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/ProblemSearchViewRightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/ProblemSearchABL">
+    </SearchView>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/ProblemSearchTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:tabTextColor="@color/white"
+        app:tabSelectedTextColor="@color/ascent_blue"
+        app:tabIndicatorColor="@color/ascent_blue"
+        app:layout_constraintTop_toBottomOf="@+id/ProblemSearchView" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/ProblemSearchViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintTop_toBottomOf="@+id/ProblemSearchTabLayout"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+    <Button
+        android:id="@+id/ProblemSearchSortBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sort_btn_text"
+        android:onClick="SortOnClick"
+        app:layout_constraintLeft_toRightOf="@id/ProblemSearchViewRightGuideline"
+        app:layout_constraintRight_toLeftOf="@id/SearchFilterBtn"
+        app:layout_constraintTop_toTopOf="@id/ProblemSearchView"
+        app:layout_constraintBottom_toBottomOf="@id/ProblemSearchView"/>
+
+    <ImageButton
+        android:id="@+id/SearchFilterBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@color/transparent"
+        android:onClick="FilterOnClick"
+        android:scaleType="fitXY"
+        android:tint="@color/white"
+        android:tintMode="src_in"
+        app:layout_constraintBottom_toTopOf="@id/ProblemSearchTabLayout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ProblemSearchView"
+        app:layout_constraintBottom_toBottomOf="@id/ProblemSearchView"
+        app:srcCompat="@drawable/filter_icon" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ProblemSearchViewLeftGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent=".05"
+        android:orientation="vertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ProblemSearchViewRightGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent=".65"
+        android:orientation="vertical"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

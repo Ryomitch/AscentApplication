@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/red" android:state_focused="true"/>
+    <item android:state_pressed="true" android:color="@color/ascent_blue_clicked"/>
+    <item android:color="@color/ascent_blue_card"/>
+    <item android:state_enabled="false" android:color="@color/card_background"/>
+</selector>

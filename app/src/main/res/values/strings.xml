@@ -1,0 +1,134 @@
+<resources>
+    <string name="app_name">Ascent App</string>
+    <string name="app_logo">Ascent</string>
+
+    /*Sign In Activity Strings*/
+    <string name="welcome_text">Welcome</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="sign_in_button_text">Sign In</string>
+    <string name="new_user_text">New User?</string>
+    <string name="sign_up_link_text"><u>Sign Up Here!</u></string>
+    <string name="reset_password_link_text"><u>Forgot Password?</u></string>
+
+    /*Create Account Activity Strings*/
+    <string name="get_started_text">Let\'s Get Started!</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="sign_up_button_text">Sign Up</string>
+    <string name="password_info_dialog_title_text">Password Requirements</string>
+    <string name="password_info_dialog_text"> Passwords must be between 8 and 20 characters \n
+        <br> </br> They must contain:  \n
+        <br> </br>•	At least one digit \n
+        <br> </br>•	At least one lower case character \n
+        <br> </br>•	At least one upper case character \n
+        <br> </br>•	At least one of the following special characters: £!_?@#$%^&amp;+=*. \n
+        <br> </br>• No white spaces\n
+    </string>
+    /* Privacy Policy Dialog */
+    <string name="privacy_policy_dialog_title_text">Do you accept the terms of our privacy policy?</string>
+    <string name="privacy_policy_checkbox_text">Yes I agree with the terms and conditions of the Ascent Application privacy policy</string>
+    <string name="privacy_policy_link"><a href="https://www.privacypolicies.com/live/8ebb516f-d176-4098-a78c-8bb2856f755b">Click here to view our privacy policy</a></string>
+
+    /*Home Activity Strings*/
+    <string name="profile_button_text">Profile</string>
+    <string name="problem_button_text">Create Routes</string>
+    <string name="search_button_text">Search Routes</string>
+
+    /*Profile Activity Strings*/
+    <string name="profile_title_text">My Profile</string>
+    <string name="display_name_placeholder_text">Display Name</string>
+    <string name="email_placeholder_text">Email</string>
+    <string name="friends_btn_text">Friends List</string>
+    <string name="profile_problem_btn_text">My Routes</string>
+    <string name="profile_favorites_btn_text">Favorites</string>
+    <string name="profile_record_btn_text">Record</string>
+    /*Edit Profile Strings*/
+    <string name="profile_edit_email_option">Change Email</string>
+    <string name="profile_edit_name_option">Change Display Name</string>
+    <string name="enter_new_name_hint_text">New Display Name</string>
+    <string name="enter_new_email_hint_text">New Email</string>
+    <string name="profile_edit_password_option">Change Password</string>
+    <string name="save_btn_text">Save</string>
+    /*Edit Password Strings*/
+    <string name="current_password_hint">Current Password</string>
+    <string name="new_password_hint">New Password</string>
+    <string name="cancel_btn_text">Cancel</string>
+    <string name="submit_change_btn_text">Submit</string>
+    /*Edit Avatar Strings*/
+    <string name="browse_images_btn_text">Browse Images</string>
+    <string name="take_photo_btn_text">Open Camera</string>
+    /*Sign Out option*/
+    <string name="sign_out_option_text">Sign Out</string>
+    <string name="sign_out_title_text">Are you sure you want to sign out?</string>
+    /*Delete Account Option*/
+    <string name="delete_account_option_text">Delete Account</string>
+    <string name="delete_account_title_text">Are you sure you want to delete your account?
+        <br> </br>All your data will be removed from application.</string>
+    <string name="delete_account_password_text">Please re-enter your password to delete your account</string>
+    /*View Other Profile Strings*/
+    <string name="view_user_profile_problems_text">User\'s Routes</string>
+    <string name="send_friend_request_button_text">Send Friend Request</string>
+    <string name="cancel_friend_request_button_text">Cancel Friend Request</string>
+    <string name="remove_friend_button_text">Remove</string>
+    <string name="accept_request_button_text">Accept Friend Request</string>
+
+    /*Virtual Wall Activity Strings*/
+    <string name="virtual_wall_toolbar_text">Setup Name</string>
+    <string name="virtual_wall_title_text">Create Routes</string>
+    /*Help Dialog Strings*/
+    <string name="problem_help_title_text">Tips:</string>
+    <string name="problem_help_points_text">
+        •	Routes (or boulder problems) can be created by selecting holds on the wall as part of the route then clicking the add button at the bottom. \n
+        <br> </br>•	Holds are selected by tapping on them on the virtual wall, which will cause a ring to be displayed around the selected hold. \n
+        <br> </br>•	Routes will require two starting holds, which will be the first 2 holds the user selects. Start holds must be on row 5 or lower. When these holds are selected their rings are displayed as green. \n
+        <br> </br>•	The user may then select any holds next as middle holds, as long as each hold they select is in a row higher than or in the same row as the previously selected hold. Also, they can only select 2 holds from the same row. They must select at least 2 middle holds. The middle holds will be highlighted with a blue ring. \n
+        <br> </br>•	Once middle holds are selected, the user can select one finishing hold from any of the holds in the top row. The finishing hold is highlighted with a red ring. \n
+        <br> </br>• There is a Min of 5 holds and Max of 20 holds per route \n
+    </string>
+    <string name="close_btn_text">Close</string>
+    /*Add Problem Dialog Strings*/
+    <string name="add_problem_title_text">Nearly There...</string>
+    <string name="add_problem_grade_text">Grade</string>
+    <string name="add_problem_btn_text">Submit</string>
+    <string name="add_problem_name_hint_text">Route Name</string>
+    <string name="add_problem_log_attempt_title_text">Log Attempts</string>
+    <string name="add_problem_attempt_spinner_text">No. of Attempts</string>
+    <string name="add_problem_complete_cb_text">Completed</string>
+    /*Set Hold Dialog String*/
+    <string name="set_hold_title_text">Set Hold Type</string>
+    <string name="set_hold_placeholder_text">set this hold type</string>
+    /*Add Wall Set Dialog Strings*/
+    <string name="wall_set_name_hint_text">Enter Wall Setup Name</string>
+    /*Change Setup Dialog Strings*/
+    <string name="change_setup_title_text">Change Setup</string>
+    <string name="change_setup_select_text">Select a different setup:</string>
+    /*Delete Problem Dialog Strings*/
+    <string name="delete_problem_text">Are you sure you want to delete this route?</string>
+    <string name="delete_problem_btn_text">Yes</string>
+    <string name="cancel_delete_problem_btn_text">Cancel</string>
+
+    /*Problem Search Activity Strings*/
+    <string name="problem_search_title_text">Search Routes</string>
+    <string name="general_tab_item_text">General</string>
+    <string name="favorites_tab_item_text">Favorites</string>
+    <string name="my_problems_tab_item_text">My Problems</string>
+    <string name="sort_btn_text">Sort</string>
+    <string name="sort_default_btn_text">Route Name</string>
+    <string name="sort_grade_btn_text">Grade</string>
+    <string name="sort_setter_btn_text">Setter</string>
+    <string name="sort_ascending_text">Ascending</string>
+    <string name="sort_descending_text">Descending</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_filter_clear_text">Clear Selection</string>
+    <string name="search_filter_placeholder_text">Item Select</string>
+    <string name="benchmark_dialog_title_text">Benchmarks</string>
+
+    /*Record Activity Strings*/
+    <string name="record_title_text">Record</string>
+    <string name="stats_title_text">Routes By Grade</string>
+
+    /*Friends Activity Strings*/
+    <string name="friends_title_text">Friends List</string>
+    <string name="find_users_dialog_title_text">Find Users</string>
+</resources>

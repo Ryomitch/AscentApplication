@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/HomeCL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ascent_background"
+    tools:context=".HomeActivity">
+
+    <include
+        android:id="@+id/HomeLogo"
+        layout="@layout/ascent_app_logo_large"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2xl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/HomeHorizontalGuideline1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/HomeHorizontalGuideline2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/HomeHorizontalGuideline3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ProfileBtnCL"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
+        android:background="@drawable/card_btn_bg"
+        android:onClick="ProfileOnClick"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/HomeHorizontalGuideline1"
+        app:layout_constraintBottom_toTopOf="@+id/HomeHorizontalGuideline2">
+
+        <RelativeLayout
+            android:id="@+id/ProfileRL"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_marginLeft="@dimen/margin_6xl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cardCornerRadius="35dp"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/ProfileIV"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/profile_icon" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/ProfileTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_button_text"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_marginRight="@dimen/margin_4xl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/ProfileRL"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ProblemCL"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
+        android:background="@drawable/card_btn_bg"
+        android:onClick="CreateProblemsOnClick"
+        app:layout_constraintBottom_toTopOf="@id/HomeHorizontalGuideline3"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HomeHorizontalGuideline2">
+
+        <RelativeLayout
+            android:id="@+id/ProblemRL"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_marginLeft="@dimen/margin_6xl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cardCornerRadius="35dp">
+
+                <ImageView
+                    android:id="@+id/ProblemIV"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/problems_icon" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/ProblemTV"
+            android:layout_width="112dp"
+            android:layout_height="61dp"
+            android:layout_marginRight="@dimen/margin_4xl"
+            android:text="@string/problem_button_text"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/ProblemRL"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/SearchCL"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
+        android:background="@drawable/card_btn_bg"
+        android:onClick="SearchProblemsOnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HomeHorizontalGuideline3">
+
+        <ImageView
+            android:id="@+id/SearchIV"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="@dimen/margin_6xl"
+            app:tint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/search_icon" />
+
+        <TextView
+            android:id="@+id/HomeSearchTV"
+            android:layout_width="112dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="@dimen/margin_4xl"
+            android:text="@string/search_button_text"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/SearchIV"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

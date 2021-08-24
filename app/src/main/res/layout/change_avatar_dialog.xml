@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ascent_blue_card">
+
+    <RelativeLayout
+        android:id="@+id/ChangeAvatarRL"
+        android:layout_width="126dp"
+        android:layout_height="126dp"
+        android:layout_marginTop="@dimen/margin_6xl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ChangeAvatarCV"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="60dp">
+
+            <ImageView
+                android:id="@+id/ChangeAvatarIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profile_image_background"
+                app:srcCompat="@drawable/profile_icon"
+                android:scaleType="centerCrop"/>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/BrowseAvatarBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/browse_images_btn_text"
+        android:textSize="24sp"
+        android:layout_margin="@dimen/margin_2xl"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/TakePhotoAvatarBtn"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ChangeAvatarGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.5"
+        android:orientation="vertical"/>
+
+    <Button
+        android:id="@+id/ChangeAvatarCancelBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel_btn_text"
+        android:layout_marginTop="@dimen/margin_4xl"
+        app:layout_constraintTop_toBottomOf="@+id/BrowseAvatarBtn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/ChangeAvatarGuideline"/>
+
+    <Button
+        android:id="@+id/ChangeAvatarSaveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_4xl"
+        android:text="@string/save_btn_text"
+        app:layout_constraintTop_toBottomOf="@id/BrowseAvatarBtn"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/ChangeAvatarGuideline"/>
+
+    <Button
+        android:id="@+id/TakePhotoAvatarBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_2xl"
+        android:textSize="24sp"
+        android:text="@string/take_photo_btn_text"
+        app:layout_constraintTop_toBottomOf="@id/ChangeAvatarRL"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

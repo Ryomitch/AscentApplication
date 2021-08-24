@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/RecordItemCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/RecordBP_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="temp text"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@id/RecordItemLeftVerticalGuideline"
+            app:layout_constraintRight_toLeftOf="@id/RecordItemMiddleVerticalGuideline" />
+
+        <TextView
+            android:id="@+id/RecordBP_Setter"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="temp text"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toRightOf="@id/RecordItemLeftVerticalGuideline"
+            app:layout_constraintRight_toLeftOf="@id/RecordItemMiddleVerticalGuideline"
+            app:layout_constraintTop_toBottomOf="@id/RecordBP_Name" />
+
+        <TextView
+            android:id="@+id/RecordBP_Grade"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="temp text"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@id/RecordItemLeftVerticalGuideline"
+            app:layout_constraintRight_toLeftOf="@id/RecordItemMiddleVerticalGuideline"
+            app:layout_constraintTop_toBottomOf="@id/RecordBP_Setter" />
+
+        <TextView
+            android:id="@+id/RecordBP_Attempts"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="temp text"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@id/RecordItemLeftVerticalGuideline"
+            app:layout_constraintRight_toLeftOf="@id/RecordItemMiddleVerticalGuideline"
+            app:layout_constraintTop_toBottomOf="@id/RecordBP_Grade"/>
+
+        <Button
+            android:id="@+id/RecordItemBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="View"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/RecordItemLeftVerticalGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/RecordItemMiddleVerticalGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/RecordItemRightVerticalGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

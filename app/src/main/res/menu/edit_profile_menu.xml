@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/edit_name_option" android:title="@string/profile_edit_name_option"/>
+    <item android:id="@+id/edit_email_option" android:title="@string/profile_edit_email_option"/>
+    <item android:id="@+id/edit_password_option" android:title="@string/profile_edit_password_option"/>
+    <item android:id="@+id/edit_profile_picture_option" android:title="Change Avatar"/>
+    <item android:id="@+id/sign_out_option" android:title="@string/sign_out_option_text"/>
+    <item android:id="@+id/delete_account_option" android:title="@string/delete_account_option_text"/>
+</menu>

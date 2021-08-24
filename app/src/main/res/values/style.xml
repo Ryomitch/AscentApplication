@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MaterialBottomDialogSheet" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowAnimationStyle">@style/MaterialBottomDialogSheetAnimation</item>
+        <item name="autoCompleteTextViewStyle">@style/SearchAutoCompleteTextView</item>
+        <item name="android:editTextColor">@color/white</item>
+    </style>
+
+    <style name="MaterialRightDialogSheet" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowAnimationStyle">@style/MaterialRightDialogSheetAnimation</item>
+        <item name="autoCompleteTextViewStyle">@style/SearchAutoCompleteTextView</item>
+        <item name="android:editTextColor">@color/white</item>
+    </style>
+
+
+    <style name="MaterialBottomDialogSheetAnimation">
+        <item name="android:windowEnterAnimation">@anim/popup_show</item>
+        <item name="android:windowExitAnimation">@anim/popup_hide</item>
+    </style>
+
+    <style name="MaterialRightDialogSheetAnimation">
+        <item name="android:windowEnterAnimation">@anim/popup_show_from_right</item>
+        <item name="android:windowExitAnimation">@anim/popup_hide_from_right</item>
+    </style>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/set_wall_option" android:title="Set a new wall" />
+    <item android:id="@+id/change_setup_option" android:title="Change setup"/>
+    <item android:id="@+id/help_option" android:title="Help"/>
+    <item android:id="@+id/delete_option" android:title="Delete BP"/>
+</menu>

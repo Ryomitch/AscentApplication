@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/UserItemCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/UserItemAvatarRL"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:background="@drawable/profile_image_clickable"
+            android:onClick="ProfileOnClick"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/UserItemLeftVerticalGuideline">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/UserItemAvatarCV"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                app:cardCornerRadius="30dp">
+
+                <ImageView
+                    android:id="@+id/UserItemAvatarIV"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/profile_icon" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/UserItemDisplayNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="temp text"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/UserItemLeftVerticalGuideline"
+            app:layout_constraintRight_toLeftOf="@id/UserItemMiddleVerticalGuideline" />
+
+        <ImageButton
+            android:id="@+id/UserItemBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/add_friend_icon"
+            android:scaleType="centerInside"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/UserItemMiddleVerticalGuideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/UserItemLeftVerticalGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/UserItemMiddleVerticalGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

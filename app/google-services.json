@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "458587870730",
+    "firebase_url": "https://ascent-application.firebaseio.com",
+    "project_id": "ascent-application",
+    "storage_bucket": "ascent-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458587870730:android:2b3177bc36eabfdab8b1f3",
+        "android_client_info": {
+          "package_name": "com.example.ascentapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458587870730-299b9h8a7meabcpqee8prfrir78kj5uj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaxto_LCbd60dDjrps5N3Wt8XBV7zmYps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458587870730-299b9h8a7meabcpqee8prfrir78kj5uj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

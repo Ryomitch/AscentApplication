@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CreateAccountCL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ascent_background"
+    tools:context=".CreateAccountActivity">
+
+    <include
+        android:id="@+id/CreateAccountLogo"
+        layout="@layout/ascent_app_logo_large"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2xl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/GetStartedCL"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/card_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/CreateAccountLogo"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintWidth_percent="0.9">
+
+        <TextView
+            android:id="@+id/GetStartedTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/get_started_text"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/margin_3xl"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/CreateEmailTIL"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GetStartedTV">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/CreateEmailET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:onClick="PasswordInfoOnClick"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toBottomOf="@id/ConfirmPasswordTIL"
+            app:layout_constraintRight_toRightOf="@id/CreatePasswordTIL"
+            app:srcCompat="@drawable/info_icon" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/CreatePasswordTIL"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="@dimen/margin_3xl"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CreateDisplayNameTIL"
+            app:passwordToggleTint="@color/ascent_blue"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/CreatePasswordET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password_hint"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ConfirmPasswordTIL"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="@dimen/margin_3xl"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CreatePasswordTIL"
+            app:passwordToggleTint="@color/ascent_blue"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ConfirmPasswordET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_password_hint"
+                android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/SignUpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_3xl"
+            android:onClick="CreateAccount"
+            android:text="@string/sign_up_button_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ConfirmPasswordTIL"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/CreateDisplayNameTIL"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="@dimen/margin_3xl"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/CreateEmailTIL">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/CreateDisplayNameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/display_name_placeholder_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

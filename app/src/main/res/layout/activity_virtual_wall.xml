@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/VirtualWallScreenCL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ascent_background"
+    tools:context=".VirtualWallActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/VirtualWallABL">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/VirtualWallToolbar"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/Theme.AscentApplication">
+
+            <ImageView
+                android:id="@+id/VirtualWallLogo"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:padding="1dp"
+                android:src="@drawable/ascent_logo_full_small"
+                android:layout_gravity="left"
+                android:onClick="HomeOnClick"/>
+
+            <TextView
+                android:id="@+id/VirtualWallToolbarTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/virtual_wall_toolbar_text"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+
+            <RelativeLayout
+                android:id="@+id/VirtualWallAvatarRL"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="1dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/profile_image_clickable"
+                android:onClick="WallProfileOnClick"
+                android:layout_gravity="right">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/VirtualWallAvatarCV"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="30dp">
+
+                    <ImageView
+                        android:id="@+id/VirtualWallAvatarIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/profile_icon" />
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/WallHorizontalGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16"/>
+
+    <TextView
+        android:id="@+id/VirtualWallTitleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/virtual_wall_title_text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/VirtualWallABL"
+        app:layout_constraintBottom_toBottomOf="@id/WallHorizontalGuideline"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/VirtualWallCL"
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="@dimen/margin_2xl"
+        android:background="@drawable/virtual_wall_background"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WallHorizontalGuideline">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRowStartGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.98"
+            android:tag="WallRowStartGuideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow1Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.93"
+            android:tag="WallRow1Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow2Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.88"
+            android:tag="WallRow2Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow3Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.83"
+            android:tag="WallRow3Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow4Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.77"
+            android:tag="WallRow4Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow5Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.72"
+            android:tag="WallRow5Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow6Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.67"
+            android:tag="WallRow6Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow7Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.62"
+            android:tag="WallRow7Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow8Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.57"
+            android:tag="WallRow8Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow9Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.52"
+            android:tag="WallRow9Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow10Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.46"
+            android:tag="WallRow10Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow11Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.41"
+            android:tag="WallRow11Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow12Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.36"
+            android:tag="WallRow12Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow13Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.31"
+            android:tag="WallRow13Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow14Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.26"
+            android:tag="WallRow14Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow15Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.20"
+            android:tag="WallRow15Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow16Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15"
+            android:tag="WallRow16Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow17Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.10"
+            android:tag="WallRow17Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallRow18Guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05"
+            android:tag="WallRow18Guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallColAGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:tag="WallColAGuideline"
+            app:layout_constraintGuide_begin="45dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallColBGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.20"
+            android:tag="WallColBGuideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallColCGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.27"
+            android:tag="WallColCGuideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallColDGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35"
+            android:tag="WallColDGuideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallColEGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.42"
+            android:tag="WallColEGuideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallColFGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"
+            android:tag="WallColFGuideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallColGGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.57"
+            android:tag="WallColGGuideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallColHGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65"
+            android:tag="WallColHGuideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallColIGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.72"
+            android:tag="WallColIGuideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallColJGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8"
+            android:tag="WallColJGuideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallColKGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.87"
+            android:tag="WallColKGuideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/WallColEndGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"
+            android:tag="WallColEndGuideline"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/VirtualWallSearchBtnRL"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="@dimen/margin_4xl"
+        android:onClick="SearchOnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/VirtualWallCL">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/VirtualWallSearchCV"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:cardBackgroundColor="#00FFFFFF"
+            app:cardCornerRadius="32dp">
+
+            <ImageView
+                android:id="@+id/VirtualWallSearchIV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                app:tint="@color/white"
+                app:srcCompat="@drawable/search_icon" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/VirtualWallAddBtnRL"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:onClick="AddProblemOnClick"
+        android:visibility="invisible"
+        android:background="@drawable/profile_image_clickable"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/VirtualWallSearchBtnRL"
+        app:layout_constraintRight_toLeftOf="@id/VirtualWallResetBtnRL"
+        app:layout_constraintTop_toBottomOf="@+id/VirtualWallCL">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/VirtualWallAddCV"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:cardBackgroundColor="#00FFFFFF"
+            app:cardCornerRadius="32dp">
+
+            <ImageView
+                android:id="@+id/VirtualWallAddIV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/add_icon" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/VirtualWallResetBtnRL"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/margin_4xl"
+        android:onClick="ResetOnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/VirtualWallCL">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/VirtualWallResetCV"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:cardBackgroundColor="#00FFFFFF"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/VirtualWallResetIV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/reset"
+                app:tint="@color/white" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

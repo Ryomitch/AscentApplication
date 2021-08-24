@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#00FF00</color>
+    <color name="transparent">#08000000</color>
+
+    /*Application Colors*/
+    <color name="ascent_blue">#2A27E8</color>
+    <color name="ascent_blue_card">#B32A27E8</color>
+    <color name="ascent_blue_clicked">#B3A5AFF6</color>
+    <color name="card_background">#B3FAFAFA</color>
+    <color name="black_transparent">#B3000000</color>
+
+    /*Sign Up Button Colours*/
+    <color name="sign_up_link">#5DD4EE</color>
+    <color name="sign_up_link_focused">#268FA6</color>
+    <color name="sign_up_link_pressed">#213325</color>
+    <color name="sign_link_disabled">#383D3E</color>
+
+    /*Reset Password Button Colours*/
+    <color name="reset_link">#FF0000</color>
+    <color name="reset_link_focused">#268FA6</color>
+    <color name="reset_link_pressed">#213325</color>
+    <color name="reset_link_disabled">#383D3E</color>
+
+</resources>
